@@ -3,7 +3,7 @@
 <table>
 
 <% @notes.each do |note| %>
-  <tr>
+  <tr class="<%= cycle('list_even', 'list_odd') %>">
     <td class='list_title'><%= note.title %></td>
     <td><%= link_to 'Show', note %></td>
     <td><%= link_to 'Edit', edit_note_path(note) %></td>

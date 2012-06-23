@@ -7,14 +7,24 @@ body.notes {
 		border-collapse: collapse;
 	}
 
-	table tr {
-		td {
-			padding: 5px;
-			vertical-align: top;
+	table {
+		tr {
+			td {
+				padding: 5px;
+				vertical-align: top;
+			}
+
+			td.list_title {
+				width:60%;
+			}
 		}
 
-		td.list_title {
-			width:60%;
+		tr.list_even {
+			background: #e0f8f8
 		}
-	}
+
+		tr.list_odd {
+			background: #f8b0f8
+		}
+	} 
 }
