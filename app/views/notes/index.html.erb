@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Content</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +11,6 @@
 <% @notes.each do |note| %>
   <tr>
     <td><%= note.title %></td>
-    <td><%= note.content %></td>
     <td><%= link_to 'Show', note %></td>
     <td><%= link_to 'Edit', edit_note_path(note) %></td>
     <td><%= link_to 'Destroy', note, confirm: 'Are you sure?', method: :delete %></td>
