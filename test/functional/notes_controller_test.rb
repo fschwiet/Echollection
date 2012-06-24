@@ -11,6 +11,11 @@ class NotesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:notes)
   end
 
+  test "should get index with all notes" do
+    get :index
+    assert_select 'table tr', count: 2
+  end
+
   test "should get new" do
     get :new
     assert_response :success
