@@ -6,7 +6,10 @@ class UserSessionsController < ApplicationController
 
   def create
   	@user_session = UserSession.new(params[:user_session])
-  	@user_session.save
-    redirect_to :root
+  	if @user_session.save
+  	  redirect_to :root
+    else
+      render :action => :new
+    end
   end
 end
