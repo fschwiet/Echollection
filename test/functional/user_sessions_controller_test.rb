@@ -12,9 +12,7 @@ class UserSessionsControllerTest < ActionController::TestCase
     assert_at_login_form
 
     post :create, :user_session => { email: 'bjohnson@server.com', password: 'benrocks'}
-    assert_redirected_to :root      
-    assert user_session = UserSession.find, "Should have saved user session"
-    assert_equal users(:ben), user_session.user, "Should have associated user with session"
+    should_be_logged_in_as "ben"
   end
 
   test "should receive error when using invalid username" do
