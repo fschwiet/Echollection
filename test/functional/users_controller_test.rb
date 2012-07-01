@@ -37,4 +37,15 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_select "div#error_explanation", "Email should look like an email address."
   end
+
+  test "should skip registration page if signed in" do
+
+    UserSession.create(users(:ben))
+
+    get :new
+    
+    assert_redirected_to :root      
+    should_be_logged_in_as 'ben'
+  end
+
 end
