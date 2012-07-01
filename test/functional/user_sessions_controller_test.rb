@@ -20,4 +20,12 @@ class UserSessionsControllerTest < ActionController::TestCase
     assert_at_login_form
     assert_select "div#error_explanation"
   end
+
+  test "should skip login page if signed in" do
+
+    UserSession.create(users(:ben))
+
+    get :new
+    should_be_logged_in_as 'ben'
+  end
 end

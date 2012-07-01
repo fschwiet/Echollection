@@ -43,9 +43,6 @@ class UsersControllerTest < ActionController::TestCase
     UserSession.create(users(:ben))
 
     get :new
-    
-    assert_redirected_to :root      
     should_be_logged_in_as 'ben'
   end
-
 end
