@@ -3,6 +3,7 @@ require 'test_helper'
 def assert_at_login_form
     assert_select "input[name='user_session[email]']"
     assert_select "input[name='user_session[password]']"
+    assert_select "input[type='submit'][value='Login']"
 end
 
 class UserSessionsControllerTest < ActionController::TestCase
@@ -21,5 +22,4 @@ class UserSessionsControllerTest < ActionController::TestCase
     assert_at_login_form
     assert_select "div#error_explanation"
   end
-
 end

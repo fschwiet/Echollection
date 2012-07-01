@@ -1,5 +1,6 @@
 Echollection::Application.routes.draw do
   resources :notes
+  resources :users
   resources :user_sessions
 
   root to: 'notes#index'
