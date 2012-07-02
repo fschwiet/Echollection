@@ -25,6 +25,7 @@ class UsersControllerTest < ActionController::TestCase
       password: SOME_PASSWORD, 
       password_confirmation: SOME_PASSWORD}   
       
+    assert_redirected_to :root      
     should_be_logged_in_as 'gooby'
   end
 
@@ -43,6 +44,7 @@ class UsersControllerTest < ActionController::TestCase
     UserSession.create(users(:ben))
 
     get :new
+    assert_redirected_to :root      
     should_be_logged_in_as 'ben'
   end
 end

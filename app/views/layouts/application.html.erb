@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
+
+<%= render 'shared/login' %>
 <%= yield %>
 
 </body>

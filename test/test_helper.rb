@@ -5,7 +5,6 @@ require 'authlogic/test_case'
 
 
 def should_be_logged_in_as (name)
-  assert_redirected_to :root      
   assert user_session = UserSession.find, "Should have saved user session"
   assert_equal name, user_session.user.name, "Should have associated user with session"
 end

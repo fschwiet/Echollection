@@ -12,6 +12,7 @@ class UserSessionsControllerTest < ActionController::TestCase
     assert_at_login_form
 
     post :create, :user_session => { email: 'bjohnson@server.com', password: 'benrocks'}
+    assert_redirected_to :root      
     should_be_logged_in_as "ben"
   end
 
@@ -26,6 +27,7 @@ class UserSessionsControllerTest < ActionController::TestCase
     UserSession.create(users(:ben))
 
     get :new
+    assert_redirected_to :root      
     should_be_logged_in_as 'ben'
   end
 end
