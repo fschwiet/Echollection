@@ -1,2 +1,4 @@
 
-hi! <%= @user_session %>
+<% if @current_user %>
+   <span>Welcome, <%=h @current_user.name %></span>
+<% end %>

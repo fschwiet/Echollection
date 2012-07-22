@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :current_user
+
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
