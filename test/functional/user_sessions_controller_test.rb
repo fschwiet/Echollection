@@ -7,6 +7,7 @@ def assert_at_login_form
 end
 
 class UserSessionsControllerTest < ActionController::TestCase
+
   test "should be able to login" do
     get :new
     assert_at_login_form

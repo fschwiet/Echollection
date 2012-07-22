@@ -5,14 +5,6 @@ class NotesControllerTest < ActionController::TestCase
     @note = notes(:one)
   end
 
-  test "should show login on index" do
-    UserSession.create(users(:ben))
-
-    get :new
-    should_be_logged_in_as 'ben'
-    assert_select "*", "Welcome, gooby"
-  end
-
   test "should get index" do
     get :index
     assert_response :success
