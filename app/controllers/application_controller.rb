@@ -21,4 +21,17 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
+
+  def require_user
+    if current_user == nil
+      store_location
+      #flash[:notice] 
+      redirect_to new_user_session_url
+      return false
+    end
+  end
+
+  def store_location
+    session[:return_to] = request.full_path
+  end
 end

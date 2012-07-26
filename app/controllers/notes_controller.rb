@@ -1,4 +1,7 @@
 class NotesController < ApplicationController
+
+  before_filter :require_user
+
   # GET /notes
   # GET /notes.json
   def index
